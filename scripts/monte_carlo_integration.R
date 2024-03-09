@@ -6,7 +6,7 @@ f <- function(x) {
 }
 
 generate_sample_mean <- function(n) {
-  x_values <- runif(n, min = -100, max = 100)
+  x_values <- runif(n, min = -1, max = 1)
   f_values <- f(x_values)
   sample_mean <- mean(f_values)
   return(list(sample_mean = sample_mean, x_values = x_values, f_values = f_values))
