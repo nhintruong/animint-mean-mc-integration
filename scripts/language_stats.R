@@ -15,7 +15,7 @@ data_long <- data %>%
 data_long$Year <- as.numeric(format(as.yearmon(data_long$Date, "%B %Y"), "%Y"))
 
 # Define ggplot object
-scatter <- ggplot(data_long, aes(x = programming_language, y = popularity, color = Year)) +
+scatter <- ggplot(data_long, aes(x = Year, y = popularity, color = programming_language)) +
   geom_point(showSelected = "Year") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   labs(x = "Programming Language", y = "Popularity", title = "Popularity of Programming Languages Over Time")
