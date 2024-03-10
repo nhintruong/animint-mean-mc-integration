@@ -4,9 +4,10 @@
  "geom": "point",
 "classed": "geom1_point_scatter",
 "aes": {
- "x": "programming_language",
+ "x": "Year",
 "y": "popularity",
-"colour": "Year",
+"colour": "programming_language",
+"showSelectedlegendcolour": "programming_language",
 "showSelected1": "Year" 
 },
 "params": {
@@ -16,8 +17,9 @@
 },
 "types": {
  "colour": "rgb",
-"x": "integer",
+"x": "numeric",
 "y": "numeric",
+"showSelectedlegendcolour": "character",
 "showSelected1": "numeric",
 "PANEL": "integer",
 "fill": "rgb",
@@ -26,8 +28,12 @@
 "chunk_order": [
  "Year" 
 ],
-"nest_order": [],
-"subset_order": [],
+"nest_order": [
+ "showSelectedlegendcolour" 
+],
+"subset_order": [
+ "showSelectedlegendcolour" 
+],
 "chunks": {
  "2004": 1,
 "2005": 2,
@@ -62,7 +68,18 @@
  "Year":     2000 
 },
 "selectors": {
- "Year": {
+ "programming_language": {
+ "type": "multiple",
+"legend": true,
+"is.variable.value": false,
+"showSelected": true,
+"selected": [ "Abap", "Ada", "C.C..", "C.", "Cobol", "Dart", "Delphi.Pascal", "Go", "Groovy", "Haskell", "Java", "JavaScript", "Julia", "Kotlin", "Lua", "Matlab", "Objective.C", "Perl", "PHP", "Powershell", "Python", "R", "Ruby", "Rust", "Scala", "Swift", "TypeScript", "VBA", "Visual.Basic" ],
+"levels": [ "Abap", "Ada", "C.C..", "C.", "Cobol", "Dart", "Delphi.Pascal", "Go", "Groovy", "Haskell", "Java", "JavaScript", "Julia", "Kotlin", "Lua", "Matlab", "Objective.C", "Perl", "PHP", "Powershell", "Python", "R", "Ruby", "Rust", "Scala", "Swift", "TypeScript", "VBA", "Visual.Basic" ],
+"update": [
+ "geom1_point_scatter" 
+] 
+},
+"Year": {
  "is.variable.value": false,
 "type": "single",
 "showSelected": true,
@@ -79,44 +96,219 @@
  "scatter": {
  "panel_margin_lines":     0.25,
 "legend": {
- "Year": {
+ "programming_language": {
  "guide": "legend",
 "geoms": "point",
-"title": "Year",
-"class": "Year",
-"selector": null,
-"is_discrete": false,
+"title": "programming_language",
+"class": "programming_language",
+"selector": "programming_language",
+"is_discrete": true,
 "legend_type": "colour",
 "text_size": "8.8pt",
 "title_size": "11pt",
 "entries": [
  {
- "pointcolour": "#4B9AD8",
+ "pointcolour": "#F8766D",
 "pointshape":       19,
 "pointsize":      1.5,
 "pointstroke":      0.5,
-"label": "2020" 
+"label": "Abap" 
 },
 {
- "pointcolour": "#3875A6",
+ "pointcolour": "#EF7F48",
 "pointshape":       19,
 "pointsize":      1.5,
 "pointstroke":      0.5,
-"label": "2015" 
+"label": "Ada" 
 },
 {
- "pointcolour": "#275277",
+ "pointcolour": "#E48800",
 "pointshape":       19,
 "pointsize":      1.5,
 "pointstroke":      0.5,
-"label": "2010" 
+"label": "C." 
 },
 {
- "pointcolour": "#16314B",
+ "pointcolour": "#D69100",
 "pointshape":       19,
 "pointsize":      1.5,
 "pointstroke":      0.5,
-"label": "2005" 
+"label": "C.C.." 
+},
+{
+ "pointcolour": "#C69900",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Cobol" 
+},
+{
+ "pointcolour": "#B4A000",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Dart" 
+},
+{
+ "pointcolour": "#9EA700",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Delphi.Pascal" 
+},
+{
+ "pointcolour": "#83AD00",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Go" 
+},
+{
+ "pointcolour": "#60B200",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Groovy" 
+},
+{
+ "pointcolour": "#19B700",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Haskell" 
+},
+{
+ "pointcolour": "#00BB48",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Java" 
+},
+{
+ "pointcolour": "#00BE6B",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "JavaScript" 
+},
+{
+ "pointcolour": "#00C088",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Julia" 
+},
+{
+ "pointcolour": "#00C1A2",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Kotlin" 
+},
+{
+ "pointcolour": "#00C0BA",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Lua" 
+},
+{
+ "pointcolour": "#00BECF",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Matlab" 
+},
+{
+ "pointcolour": "#00B9E1",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Objective.C" 
+},
+{
+ "pointcolour": "#00B3F1",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Perl" 
+},
+{
+ "pointcolour": "#00ABFD",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "PHP" 
+},
+{
+ "pointcolour": "#46A0FF",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Powershell" 
+},
+{
+ "pointcolour": "#8794FF",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Python" 
+},
+{
+ "pointcolour": "#B086FF",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "R" 
+},
+{
+ "pointcolour": "#CE79FF",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Ruby" 
+},
+{
+ "pointcolour": "#E46DF6",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Rust" 
+},
+{
+ "pointcolour": "#F365E6",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Scala" 
+},
+{
+ "pointcolour": "#FC61D4",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Swift" 
+},
+{
+ "pointcolour": "#FF62BE",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "TypeScript" 
+},
+{
+ "pointcolour": "#FF67A6",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "VBA" 
+},
+{
+ "pointcolour": "#FE6E8B",
+"pointshape":       19,
+"pointsize":      1.5,
+"pointstroke":      0.5,
+"label": "Visual.Basic" 
 } 
 ] 
 } 
@@ -160,35 +352,10 @@
 "loc": {
  "x": [
  [
- 1,
-2,
-3,
-4,
-5,
-6,
-7,
-8,
-9,
-10,
-11,
-12,
-13,
-14,
-15,
-16,
-17,
-18,
-19,
-20,
-21,
-22,
-23,
-24,
-25,
-26,
-27,
-28,
-29 
+     2005,
+    2010,
+    2015,
+    2020 
 ] 
 ],
 "y": [
@@ -208,7 +375,16 @@
 "lineend": "butt",
 "loc": {
  "x": [
- [] 
+ [
+     2005,
+  2007.5,
+    2010,
+  2012.5,
+    2015,
+  2017.5,
+    2020,
+  2022.5 
+] 
 ],
 "y": [
  [
@@ -225,68 +401,18 @@
 },
 "axis1": {
  "x": [
- 1,
-2,
-3,
-4,
-5,
-6,
-7,
-8,
-9,
-10,
-11,
-12,
-13,
-14,
-15,
-16,
-17,
-18,
-19,
-20,
-21,
-22,
-23,
-24,
-25,
-26,
-27,
-28,
-29 
+     2005,
+    2010,
+    2015,
+    2020 
 ],
 "xlab": [
- "Abap",
-"Ada",
-"C.",
-"C.C..",
-"Cobol",
-"Dart",
-"Delphi.Pascal",
-"Go",
-"Groovy",
-"Haskell",
-"Java",
-"JavaScript",
-"Julia",
-"Kotlin",
-"Lua",
-"Matlab",
-"Objective.C",
-"Perl",
-"PHP",
-"Powershell",
-"Python",
-"R",
-"Ruby",
-"Rust",
-"Scala",
-"Swift",
-"TypeScript",
-"VBA",
-"Visual.Basic" 
+ "2005",
+"2010",
+"2015",
+"2020" 
 ],
-"xrange": [      0.4,     29.6 ],
+"xrange": [  2003.05,  2023.95 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -316,35 +442,10 @@
 "yangle":        0,
 "yanchor": "end",
 "xlabs": [
- "Abap",
-"Ada",
-"C.",
-"C.C..",
-"Cobol",
-"Dart",
-"Delphi.Pascal",
-"Go",
-"Groovy",
-"Haskell",
-"Java",
-"JavaScript",
-"Julia",
-"Kotlin",
-"Lua",
-"Matlab",
-"Objective.C",
-"Perl",
-"PHP",
-"Powershell",
-"Python",
-"R",
-"Ruby",
-"Rust",
-"Scala",
-"Swift",
-"TypeScript",
-"VBA",
-"Visual.Basic" 
+ "2005",
+"2010",
+"2015",
+"2020" 
 ],
 "ylabs": [
  "0",
