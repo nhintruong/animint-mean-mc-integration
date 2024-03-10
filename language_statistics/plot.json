@@ -57,6 +57,38 @@
 "2023": 20 
 },
 "total": 20 
+},
+"geom2_line_timeSeries": {
+ "geom": "line",
+"classed": "geom2_line_timeSeries",
+"aes": {
+ "x": "programming_language",
+"y": "popularity",
+"colour": "Year",
+"showSelected1": "Year" 
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"showSelected": "Year" 
+},
+"types": {
+ "colour": "rgb",
+"x": "integer",
+"y": "numeric",
+"showSelected1": "numeric",
+"PANEL": "integer",
+"group": "character" 
+},
+"chunk_order": [],
+"nest_order": [
+ "showSelected1" 
+],
+"subset_order": [
+ "showSelected1" 
+],
+"chunks": 1,
+"total": 1 
 } 
 },
 "time": {
@@ -87,7 +119,8 @@
 "selected": "2004",
 "levels": [ "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023" ],
 "update": [
- "geom1_point_scatter" 
+ "geom1_point_scatter",
+"geom2_line_timeSeries" 
 ],
 "duration":     2000 
 } 
@@ -434,7 +467,7 @@
 "xtitle": "Programming Language",
 "strip_text_xsize": "11pt",
 "xsize": "11pt",
-"xangle":      -90,
+"xangle":       -0,
 "xanchor": "end",
 "ytitle": "Popularity",
 "strip_text_ysize": "11pt",
@@ -461,6 +494,288 @@
 },
 "geoms": [
  "geom1_point_scatter" 
+] 
+},
+"timeSeries": {
+ "panel_margin_lines":     0.25,
+"legend": {
+ "Year": {
+ "guide": "legend",
+"geoms": "path",
+"title": "Year",
+"class": "Year",
+"selector": null,
+"is_discrete": false,
+"legend_type": "colour",
+"text_size": "8.8pt",
+"title_size": "11pt",
+"entries": [
+ {
+ "pathcolour": "#4B9AD8",
+"pathsize":      0.5,
+"pathlinetype":        1,
+"label": "2020" 
+},
+{
+ "pathcolour": "#3875A6",
+"pathsize":      0.5,
+"pathlinetype":        1,
+"label": "2015" 
+},
+{
+ "pathcolour": "#275277",
+"pathsize":      0.5,
+"pathlinetype":        1,
+"label": "2010" 
+},
+{
+ "pathcolour": "#16314B",
+"pathsize":      0.5,
+"pathlinetype":        1,
+"label": "2005" 
+} 
+] 
+} 
+},
+"strips": {
+ "top": [
+ "" 
+],
+"right": [
+ "" 
+],
+"n": {
+ "top":        0,
+"right":        0 
+} 
+},
+"layout": {
+ "PANEL": [ 1 ],
+"ROW": [ 1 ],
+"COL": [ 1 ],
+"SCALE_X": [ 1 ],
+"SCALE_Y": [ 1 ],
+"AXIS_X": [ true ],
+"AXIS_Y": [ true ],
+"coord_fixed": [ false ],
+"width_proportion": [        1 ],
+"height_proportion": [        1 ] 
+},
+"panel_background": {
+ "fill": "#EBEBEB",
+"colour": "transparent",
+"size":      0.5,
+"linetype":        1 
+},
+"panel_border": [],
+"grid_major": {
+ "colour": "#FFFFFF",
+"size":      0.5,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [
+ 1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29 
+] 
+],
+"y": [
+ [
+        0,
+      10,
+      20,
+      30 
+] 
+] 
+} 
+},
+"grid_minor": {
+ "colour": "#FFFFFF",
+"size":     0.25,
+"linetype":        1,
+"lineend": "butt",
+"loc": {
+ "x": [
+ [] 
+],
+"y": [
+ [
+        0,
+       5,
+      10,
+      15,
+      20,
+      25,
+      30 
+] 
+] 
+} 
+},
+"axis1": {
+ "x": [
+ 1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29 
+],
+"xlab": [
+ "Abap",
+"Ada",
+"C.",
+"C.C..",
+"Cobol",
+"Dart",
+"Delphi.Pascal",
+"Go",
+"Groovy",
+"Haskell",
+"Java",
+"JavaScript",
+"Julia",
+"Kotlin",
+"Lua",
+"Matlab",
+"Objective.C",
+"Perl",
+"PHP",
+"Powershell",
+"Python",
+"R",
+"Ruby",
+"Rust",
+"Scala",
+"Swift",
+"TypeScript",
+"VBA",
+"Visual.Basic" 
+],
+"xrange": [      0.4,     29.6 ],
+"xline": true,
+"xticks": true,
+"y": [
+        0,
+      10,
+      20,
+      30 
+],
+"ylab": [
+ "0",
+"10",
+"20",
+"30" 
+],
+"yrange": [  -1.5705,  32.9805 ],
+"yline": true,
+"yticks": true 
+},
+"xtitle": "Programming Language",
+"strip_text_xsize": "11pt",
+"xsize": "11pt",
+"xangle":      -90,
+"xanchor": "end",
+"ytitle": "Popularity",
+"strip_text_ysize": "11pt",
+"ysize": "11pt",
+"yangle":        0,
+"yanchor": "end",
+"xlabs": [
+ "Abap",
+"Ada",
+"C.",
+"C.C..",
+"Cobol",
+"Dart",
+"Delphi.Pascal",
+"Go",
+"Groovy",
+"Haskell",
+"Java",
+"JavaScript",
+"Julia",
+"Kotlin",
+"Lua",
+"Matlab",
+"Objective.C",
+"Perl",
+"PHP",
+"Powershell",
+"Python",
+"R",
+"Ruby",
+"Rust",
+"Scala",
+"Swift",
+"TypeScript",
+"VBA",
+"Visual.Basic" 
+],
+"ylabs": [
+ "0",
+"10",
+"20",
+"30" 
+],
+"title": "Time Series of Programming Language Popularity",
+"title_size": "13.2pt",
+"options": {
+ "width":      400,
+"height":      400 
+},
+"geoms": [
+ "geom2_line_timeSeries" 
 ] 
 } 
 } 
