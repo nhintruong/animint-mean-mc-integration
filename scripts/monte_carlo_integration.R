@@ -51,7 +51,7 @@ create_animation <- function(n) {
     geom_rect(aes(xmin = x_values, xmax = x_values + 1/n, ymin = 0, ymax = y_values), fill = "blue", alpha = 0.5 , showSelected = "step") +
     geom_line(aes(x = x_values, y = sample_mean), color = "red", size = 2,showSelected = "step") +
     stat_function(fun = f, color = "green", size = 1) +
-    labs(title = "Sample Mean Monte Carlo Integration", x = "x values", y = "f(x) = x^2") +
+    labs(title = "Sample Mean Monte Carlo Integration", x = "x values", y = "f(x) = x - x^2") +
     theme_bw() 
     #+ coord_flip() 
 
