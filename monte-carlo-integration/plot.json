@@ -335,7 +335,7 @@
 "0.75",
 "1.00" 
 ],
-"xrange": [ -0.04638815, 1.045999 ],
+"xrange": [ -0.03739914, 1.037574 ],
 "xline": false,
 "xticks": true,
 "y": [
@@ -511,7 +511,7 @@
 "0.75",
 "1.00" 
 ],
-"xrange": [ -0.04638815, 1.045999 ],
+"xrange": [ -0.03739914, 1.037574 ],
 "xline": false,
 "xticks": true,
 "y": [
@@ -562,8 +562,8 @@
 "title": "Monte Carlo Estimation",
 "title_size": "14.4pt",
 "options": {
- "width":      600,
-"height":      600 
+ "width":      400,
+"height":      400 
 },
 "geoms": [
  "geom3_rect_viztwo",
@@ -702,7 +702,7 @@
 "0.1",
 "0.2" 
 ],
-"yrange": [ -0.236725, 0.2731771 ],
+"yrange": [ -0.2303313, 0.2728724 ],
 "yline": false,
 "yticks": true 
 },
@@ -733,8 +733,8 @@
 "title": "Monte Carlo Estimation",
 "title_size": "14.4pt",
 "options": {
- "width":      600,
-"height":      600 
+ "width":      400,
+"height":      400 
 },
 "geoms": [
  "geom5_line_vizthree",

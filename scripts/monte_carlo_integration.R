@@ -71,8 +71,8 @@ create_animation <- function(n) {
                   fill="black") +
     stat_function(fun = f, color = "green", size = 1) + 
     labs(x="x values", y="Area Integrated") +
-    theme_bw() +
-    theme_animint(width=600, height=600)
+    theme_bw() 
+  # theme_animint(width=600, height=600)
   
   viz.three <- ggplot(df, aes(x = step, y = cumulative_area, key = step)) +
     ggtitle("Monte Carlo Estimation") +
@@ -81,8 +81,8 @@ create_animation <- function(n) {
               clickSelects="step",
               showSelected = "step") +
     labs(x="steps", y="cumulative Area Integrated") +
-    theme_bw() +
-    theme_animint(width=600, height=600)
+    theme_bw() 
+    # theme_animint(width=600, height=600)
 
   viz.publish <- animint(viz.one,
                          viz.two,
