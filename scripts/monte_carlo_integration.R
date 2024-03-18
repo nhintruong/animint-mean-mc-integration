@@ -1,5 +1,6 @@
 library(ggplot2)
 library(animint2)
+library(lapply)
 
 f <- function(x) {
   return(x-x^2)
@@ -17,21 +18,32 @@ result <- generate_sample_mean(100)
 print(result$sample_mean)
 print(result$f_values)
 
-
 prepare_data <- function(n) {
   result <- generate_sample_mean(n)
   df <- data.frame(
     step = 1:n,
     x_values = result$x_values,
     y_values = result$f_values,
-    sample_mean = rep(result$sample_mean, n)
+    sample_mean = rep(result$sample_mean, n),
+    area_integrated = rep(0, n)
   )
+  
+  for (i in 0:(n-1)) {
+    x1 <- df$x_values[i]
+    x2 <- df$x_values[i+1]
+    y1 <- df$y_values[i]
+    y2 <- df$y_values[i+1]
+    area <- 0.5 * (x2 - x1) * (y1 + y2)
+    df$area_integrated[i] <- area
+  }
+  
+  df$cumulative_area <- cumsum(df$area_integrated)
+  
   return(df)
 }
 
-
 # Example 
-result <- prepare_data_step(20)
+result <- prepare_data(20)
 print(result)
 
 
@@ -40,31 +52,54 @@ create_animation <- function(n) {
   # Prepare the data
   df <- prepare_data(n)
   
-  static_plot <- ggplot(df, aes(x = x_values, y = y_values)) +
-    geom_rect(aes(xmin = x_values, xmax = x_values + 1/n, ymin = 0, ymax = y_values), fill = "blue", alpha = 0.1) +
-    stat_function(fun = f, color = "green", size = 1) +
-    labs(title = "Sample Mean Monte Carlo Integration", x = "x values", y = "f(x) = x^2") +
-    theme_bw() 
-  
   # Create the animation
-  ggplot_anim <- ggplot(df, aes(x = x_values, y = y_values, key = step)) +
-    geom_rect(aes(xmin = x_values, xmax = x_values + 1/n, ymin = 0, ymax = y_values), fill = "blue", alpha = 0.5 , showSelected = "step") +
-    geom_line(aes(x = x_values, y = sample_mean), color = "red", size = 2,showSelected = "step") +
+  viz.one <- ggplot(df, aes(x = x_values, y = y_values, key = step)) +
+    geom_rect(aes(xmin = x_values, xmax = x_values + 1/n, ymin = 0, ymax = y_values), 
+              fill = "blue", 
+              alpha = 0.6,
+              showSelected="step") +
     stat_function(fun = f, color = "green", size = 1) +
     labs(title = "Sample Mean Monte Carlo Integration", x = "x values", y = "f(x) = x - x^2") +
     theme_bw() 
-    #+ coord_flip() 
 
   # Animate the plot
-  viz.duration <- animint(ggplot_anim, duration = list(step = 500), source="", title="MonteCarloIntegration")
+  viz.two <- ggplot(df, aes(x = x_values, y = y_values, key = step)) +
+    ggtitle("Monte Carlo Estimation") +
+    geom_rect(aes(xmin = x_values, xmax = x_values + 1/n, ymin = 0, ymax = y_values),
+                  clickSelects="step",
+                  alpha=0.6,
+                  fill="black") +
+    stat_function(fun = f, color = "green", size = 1) + 
+    labs(x="x values", y="Area Integrated") +
+    theme_bw() +
+    theme_animint(width=600, height=600)
   
-  viz.duration.time <- viz.duration
-  viz.duration.time$time <- list(variable = "step", ms = 1000)
-  # Return the animated plot
-  return(viz.duration.time)
+  viz.three <- ggplot(df, aes(x = step, y = cumulative_area, key = step)) +
+    ggtitle("Monte Carlo Estimation") +
+    geom_line(color="red") +
+    geom_tallrect(aes(xmin = step-0.5, xmax = step + 0.5, ymin = 0, ymax = y_values),
+              clickSelects="step",
+              showSelected = "step") +
+    labs(x="steps", y="cumulative Area Integrated") +
+    theme_bw() +
+    theme_animint(width=600, height=600)
+
+  viz.publish <- animint(viz.one,
+                         viz.two,
+                         viz.three,
+                         title="Hit or Miss Monte Carlo Integration",
+                         time=list(variable="step", ms=500),
+                         first=list(step=1),
+                         out.dir='./output'
+                         )
+  
+  
+  return(viz.publish)
 }
 
 # Example usage
-n <- 100
+n <- 200
 anim_result <- create_animation(n)
 print(anim_result)
+
+
